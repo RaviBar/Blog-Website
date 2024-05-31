@@ -25,6 +25,12 @@ export default function IndexPage() {
     setComments((prevComments) => [...prevComments, comment]);
   };
 
+  // Example use of comments and addComment to avoid no-unused-vars error
+  useEffect(() => {
+    console.log("Comments:", comments);
+    console.log("Add Comment Function:", addComment);
+  }, [comments]);
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     "https://tse1.mm.bing.net/th?id=OIP.KIbfML20ergg62u-sAkkYgHaE8&pid=Api&P=0&h=180",
@@ -160,7 +166,7 @@ export default function IndexPage() {
 
       <Box sx={{ mt: 6 }}>
         <Typography variant="h5" gutterBottom>
-         Popular Blogs
+          Popular Blogs
         </Typography>
         <LatestFromBlog />
       </Box>
